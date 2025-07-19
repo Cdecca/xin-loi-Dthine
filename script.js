@@ -30,6 +30,13 @@ function handleYesClick() {
   titleElement.innerHTML = "Anh iu bé ,Anh hứa hongg làm bé buồn nữa đouuu :3";
   buttonsContainer.classList.add("hidden");
   changeImage("yes");
+
+  // Create and trigger the mailto link
+  const recipient = "sonphuocdat1@gmail.com";
+  const subject = ""; // Subject can be empty or added if needed
+  const body = "Dthien tha lỗi cho Đạt đó";
+  const mailtoLink = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  window.location.href = mailtoLink;
 }
 
 function resizeYesButton() {
@@ -55,7 +62,7 @@ function generateMessage(noCount) {
 }
 
 function changeImage(image) {
-  catImg.src = 'img/cat-${image}.jpg';
+  catImg.src = `img/cat-${image}.jpg`; // Corrected template literal
 }
 
 function updateNoButtonText() {
